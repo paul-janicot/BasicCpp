@@ -18,5 +18,8 @@
     <ClCompile Include="Basic C++.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TavernAdventure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
