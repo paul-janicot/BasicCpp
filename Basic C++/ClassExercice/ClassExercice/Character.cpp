@@ -1,6 +1,11 @@
 #include "Character.h"
 #include<random>
 
+int Character::totalEverCreated = 0;
+int Character::currentlyLiving = 0;
+
+
+
 int Character::Roll(int minNumber, int maxNumber)
 {
 	std::random_device rd;
@@ -38,6 +43,8 @@ Character::Character()
 	mAbility = AbilityEnum::Dexterity;
 	mCoins = 100;
 	mWeapon = "Sword";
+	totalEverCreated++;
+	currentlyLiving++;
 }
 
 Character::Character(string name) :
@@ -47,11 +54,15 @@ Character::Character(string name) :
 	mAbility = AbilityEnum::Dexterity;
 	mCoins = Roll(50,100);
 	mWeapon = "Sword";
-	
+	totalEverCreated++;
+	currentlyLiving++;
+
 }
 
 Character::~Character()
 {
+	currentlyLiving--;
+
 }
 
 string Character::GetWeapon()
@@ -72,7 +83,7 @@ void Character::SetWeapon(string weapon)
 void Character::SetAbility(AbilityEnum ability)
 {
 	mAbility = ability;
-	cout << "your new abilities is " << AbilityEnumToString(mAbility);
+	cout << "your new abilities is " << AbilityEnumToString(mAbility) << endl;
 }
 
 void Character::DisplayInfo()

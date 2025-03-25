@@ -22,6 +22,8 @@ private:
 
 
 public:
+	static int totalEverCreated;
+	static int currentlyLiving;
 	Character();
 	Character(string name);
 	~Character();

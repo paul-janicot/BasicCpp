@@ -1,7 +1,7 @@
 #pragma once
 
 enum class AbilityEnum {
-	Strength,
+	Strength, 
 	Intelligence,
 	Dexterity,
 	Luck
