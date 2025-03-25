@@ -10,21 +10,44 @@ int Character::Roll(int minNumber, int maxNumber)
 
 }
 
+string Character::AbilityEnumToString(AbilityEnum Ability)
+{
+	switch (Ability)
+	{
+	case AbilityEnum::Strength:
+		return "Strength";
+		break;
+	case AbilityEnum::Intelligence:
+		return "Intelligence";
+		break;
+	case AbilityEnum::Dexterity:
+		return "Dexterity";
+		break;
+	case AbilityEnum::Luck:
+		return "Luck";
+		break;
+	default:
+		return "noValid";
+		break;
+	};
+}
+
 Character::Character()
 {
 	mHealth = 10;
-	mAbility = "warrior";
+	mAbility = AbilityEnum::Dexterity;
 	mCoins = 100;
 	mWeapon = "Sword";
 }
 
-Character::Character(string name) {
+Character::Character(string name) :
+ mName{ name }
+{
 	mHealth = 10;
-	mAbility = "warrior";
+	mAbility = AbilityEnum::Dexterity;
 	mCoins = Roll(50,100);
 	mWeapon = "Sword";
-	mName = name;
-
+	
 }
 
 Character::~Character()
@@ -36,7 +59,7 @@ string Character::GetWeapon()
 	return mWeapon;
 }
 
-string Character::GetAbility()
+AbilityEnum Character::GetAbility()
 {
 	return mAbility;
 }
@@ -46,12 +69,18 @@ void Character::SetWeapon(string weapon)
 	mWeapon = weapon;
 }
 
+void Character::SetAbility(AbilityEnum ability)
+{
+	mAbility = ability;
+	cout << "your new abilities is " << AbilityEnumToString(mAbility);
+}
+
 void Character::DisplayInfo()
 {
 	cout << "---Info---" << endl;
 	cout << "-Name- : " << mName << endl;
 	cout << "-Health- : " << mHealth << endl;
-	cout << "-Ability- : " << mAbility << endl;
+	cout << "-Ability- : " << AbilityEnumToString(mAbility) << endl;
 	cout << "-Coins- : " << mCoins << endl;
 	cout << "-Weapon- : " << mWeapon << endl;
 }

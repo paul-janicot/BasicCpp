@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
+    <ClInclude Include="AbilityEnum.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
