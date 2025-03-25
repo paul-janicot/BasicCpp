@@ -3,6 +3,8 @@
 #include<iostream>
 #include<random>
 #include "AbilityEnum.h"
+#include "WeaponEnum.h"
+#include"utilities.h"
 
 using std::string;
 using std::cout;
@@ -16,7 +18,7 @@ private:
 	float mHealth;
 	AbilityEnum mAbility;
 	int mCoins;
-	string mWeapon;
+	WeaponEnum mWeapon;
 	string mName;
 
 
@@ -27,12 +29,13 @@ public:
 	Character();
 	Character(string name);
 	~Character();
-	string GetWeapon();
+	WeaponEnum GetWeapon();
 	AbilityEnum GetAbility();
-	void SetWeapon(string weapon);
+	void SetWeapon(WeaponEnum weapon);
 	void SetAbility(AbilityEnum ability);
 	void DisplayInfo();
 	int Roll(int minNumber, int maxNumber);
 	string AbilityEnumToString(AbilityEnum Ability);
+	string WeaponEnumToString(WeaponEnum Ability);
 };
 

@@ -37,12 +37,29 @@ string Character::AbilityEnumToString(AbilityEnum Ability)
 	};
 }
 
+string Character::WeaponEnumToString(WeaponEnum weapon)
+{
+	switch (weapon)
+	{
+	case WeaponEnum::Sword:
+		return "Sword";
+		break;
+	case WeaponEnum::Spear:
+		return "Spear";
+		break;
+	case WeaponEnum::MagicStaff:
+		return "MagicStaff";
+		break;
+	default:
+		break;
+	}
+}
+
 Character::Character()
 {
 	mHealth = 10;
 	mAbility = AbilityEnum::Dexterity;
 	mCoins = 100;
-	mWeapon = "Sword";
 	totalEverCreated++;
 	currentlyLiving++;
 }
@@ -53,7 +70,7 @@ Character::Character(string name) :
 	mHealth = 10;
 	mAbility = AbilityEnum::Dexterity;
 	mCoins = Roll(50,100);
-	mWeapon = "Sword";
+	mWeapon = WeaponEnum::Sword;
 	totalEverCreated++;
 	currentlyLiving++;
 
@@ -65,7 +82,7 @@ Character::~Character()
 
 }
 
-string Character::GetWeapon()
+WeaponEnum Character::GetWeapon()
 {
 	return mWeapon;
 }
@@ -75,7 +92,7 @@ AbilityEnum Character::GetAbility()
 	return mAbility;
 }
 
-void Character::SetWeapon(string weapon)
+void Character::SetWeapon(WeaponEnum weapon)
 {
 	mWeapon = weapon;
 }
@@ -93,7 +110,7 @@ void Character::DisplayInfo()
 	cout << "-Health- : " << mHealth << endl;
 	cout << "-Ability- : " << AbilityEnumToString(mAbility) << endl;
 	cout << "-Coins- : " << mCoins << endl;
-	cout << "-Weapon- : " << mWeapon << endl;
+	cout << "-Weapon- : " << WeaponEnumToString(mWeapon) << endl;
 }
 
 
