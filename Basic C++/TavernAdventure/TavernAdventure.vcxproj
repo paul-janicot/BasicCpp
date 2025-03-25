@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{53770d85-2d72-457d-bc38-3bd65db4a8b1}</ProjectGuid>
-    <RootNamespace>BasicC</RootNamespace>
+    <ProjectGuid>{8597e467-5fb8-4117-aac9-f296f7e09670}</ProjectGuid>
+    <RootNamespace>TavernAdventure</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Basic C++.cpp" />
+    <ClCompile Include="TavernAdventure.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
