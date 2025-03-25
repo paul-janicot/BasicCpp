@@ -47,6 +47,7 @@ int Choice(string firstChoice, string secondChoice, string thirdChoice) {
 
 }
 int Roll(int minNumber, int maxNumber) {
+    
     random_device rd;
     mt19937_64 gen(rd());
     uniform_int_distribution<> distrib(minNumber, maxNumber);
@@ -57,6 +58,7 @@ int Roll(int minNumber, int maxNumber) {
 
 int main()
 {
+    
 
     srand(time(NULL));
     int drink = 0;
@@ -75,8 +77,8 @@ int main()
         break;
     case 3:
         cout << "Damn good luck with that...";
-        break;
         isAsleep = true;
+        break;
     default:
         break;
     }

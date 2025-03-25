@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{8597e467-5fb8-4117-aac9-f296f7e09670}</ProjectGuid>
-    <RootNamespace>TavernAdventure</RootNamespace>
+    <ProjectGuid>{ed559d3a-d85c-45eb-8290-0196e1b4682e}</ProjectGuid>
+    <RootNamespace>ClassExercice</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,10 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="TavernAdventure.cpp" />
+    <ClInclude Include="Character.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Character.h" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
