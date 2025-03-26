@@ -11,6 +11,7 @@ protected:
 
 public:
 	Item();
+	Item(std::string name);
 	~Item();
 	std::string GetName() const ;
 	Item* ItemChoice(std::vector<Item*> items);
