@@ -59,18 +59,23 @@ Character::Character()
 {
 	mHealth = 10;
 	mAbility = AbilityEnum::Dexterity;
+	mWeaponEnum = WeaponEnum::Sword;
 	mCoins = 100;
 	totalEverCreated++;
 	currentlyLiving++;
+	mWeapon = Weapon("Sword", 2);
 }
 
-Character::Character(string name) :
- mName{ name }
+Character::Character(string name, Weapon weapon):
+ mName{ name },
+ mWeapon{ weapon }
+
 {
 	mHealth = 10;
 	mAbility = AbilityEnum::Dexterity;
 	mCoins = Roll(50,100);
-	mWeapon = WeaponEnum::Sword;
+	mWeaponEnum = WeaponEnum::Sword;
+	mWeapon = weapon;
 	totalEverCreated++;
 	currentlyLiving++;
 
@@ -84,7 +89,7 @@ Character::~Character()
 
 WeaponEnum Character::GetWeapon()
 {
-	return mWeapon;
+	return mWeaponEnum;
 }
 
 AbilityEnum Character::GetAbility()
@@ -94,7 +99,7 @@ AbilityEnum Character::GetAbility()
 
 void Character::SetWeapon(WeaponEnum weapon)
 {
-	mWeapon = weapon;
+	mWeaponEnum = weapon;
 }
 
 void Character::SetAbility(AbilityEnum ability)
@@ -110,7 +115,12 @@ void Character::DisplayInfo()
 	cout << "-Health- : " << mHealth << endl;
 	cout << "-Ability- : " << AbilityEnumToString(mAbility) << endl;
 	cout << "-Coins- : " << mCoins << endl;
-	cout << "-Weapon- : " << WeaponEnumToString(mWeapon) << endl;
+	cout << "-Weapon- : " << WeaponEnumToString(mWeaponEnum) << endl;
+}
+
+void Character::DisplayInfoWeapon()
+{
+	mWeapon.DisplayInfo();
 }
 
 

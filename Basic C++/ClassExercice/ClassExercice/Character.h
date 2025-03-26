@@ -5,6 +5,8 @@
 #include "AbilityEnum.h"
 #include "WeaponEnum.h"
 #include"utilities.h"
+#include "Item.h"
+#include "Weapon.h"
 
 using std::string;
 using std::cout;
@@ -18,7 +20,8 @@ private:
 	float mHealth;
 	AbilityEnum mAbility;
 	int mCoins;
-	WeaponEnum mWeapon;
+	WeaponEnum mWeaponEnum;
+	Weapon mWeapon;
 	string mName;
 
 
@@ -27,13 +30,14 @@ public:
 	static int totalEverCreated;
 	static int currentlyLiving;
 	Character();
-	Character(string name);
+	Character(string name, Weapon weapon);
 	~Character();
 	WeaponEnum GetWeapon();
 	AbilityEnum GetAbility();
 	void SetWeapon(WeaponEnum weapon);
 	void SetAbility(AbilityEnum ability);
 	void DisplayInfo();
+	void DisplayInfoWeapon();
 	int Roll(int minNumber, int maxNumber);
 	string AbilityEnumToString(AbilityEnum Ability);
 	string WeaponEnumToString(WeaponEnum Ability);
