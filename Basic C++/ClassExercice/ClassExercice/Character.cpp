@@ -55,30 +55,41 @@ string Character::WeaponEnumToString(WeaponEnum weapon)
 	}
 }
 
-Character::Character()
+void Character::TakeDamage(Character enemies)
 {
-	mHealth = 10;
-	mAbility = AbilityEnum::Dexterity;
-	mWeaponEnum = WeaponEnum::Sword;
-	mCoins = 100;
-	totalEverCreated++;
-	currentlyLiving++;
-	mWeapon = Weapon("Sword", 2);
+	mHealth -= enemies.mWeapon.mDamage;
+	if (mHealth <= 0) {
+		cout << "Dead" << endl;
+	}
 }
 
-Character::Character(string name, Weapon weapon):
- mName{ name },
- mWeapon{ weapon }
+void Character::DoDamage(Character* enemy)
+{
+	enemy->mHealth -= mWeapon.mDamage;
+	if (enemy->mHealth <= 0) {
+		cout << "EnemyDead" << endl;
+	}
+}
+
+
+
+
+Character::Character() :
+	mHealth{ 10 },
+	mAbility{ AbilityEnum::Dexterity },
+	mCoins{ Roll(50,100) },
+	isDead{ false }
 
 {
-	mHealth = 10;
-	mAbility = AbilityEnum::Dexterity;
-	mCoins = Roll(50,100);
-	mWeaponEnum = WeaponEnum::Sword;
+}
+
+Character::Character(string name, Weapon weapon) :
+	Character()
+{
+	mName = name;
 	mWeapon = weapon;
 	totalEverCreated++;
 	currentlyLiving++;
-
 }
 
 Character::~Character()
@@ -97,9 +108,9 @@ AbilityEnum Character::GetAbility()
 	return mAbility;
 }
 
-void Character::SetWeapon(WeaponEnum weapon)
+void Character::SetWeapon(Weapon weapon)
 {
-	mWeaponEnum = weapon;
+	mWeapon = weapon;
 }
 
 void Character::SetAbility(AbilityEnum ability)
@@ -115,7 +126,7 @@ void Character::DisplayInfo()
 	cout << "-Health- : " << mHealth << endl;
 	cout << "-Ability- : " << AbilityEnumToString(mAbility) << endl;
 	cout << "-Coins- : " << mCoins << endl;
-	cout << "-Weapon- : " << WeaponEnumToString(mWeaponEnum) << endl;
+	cout << "-Weapon- : " << mWeapon.GetName() << endl;
 }
 
 void Character::DisplayInfoWeapon()

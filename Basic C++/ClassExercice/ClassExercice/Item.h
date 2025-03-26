@@ -1,16 +1,18 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <vector>
 
 class Item
 {
-protected :
+protected:
 	std::string mName;
 	int mId;
 
 public:
 	Item();
 	~Item();
-	
+	std::string GetName() const ;
+	Item* ItemChoice(std::vector<Item*> items);
 };
 

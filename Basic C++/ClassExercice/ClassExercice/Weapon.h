@@ -1,9 +1,9 @@
 #pragma once
 #include "Item.h"
 
-class Weapon:  Item 
+class Weapon: public Item 
 {
-protected :
+public :
 	int mDamage;	
 
 public:

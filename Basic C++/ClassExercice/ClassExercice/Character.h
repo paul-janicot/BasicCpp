@@ -23,6 +23,7 @@ private:
 	WeaponEnum mWeaponEnum;
 	Weapon mWeapon;
 	string mName;
+	bool isDead;
 
 
 
@@ -34,12 +35,14 @@ public:
 	~Character();
 	WeaponEnum GetWeapon();
 	AbilityEnum GetAbility();
-	void SetWeapon(WeaponEnum weapon);
+	void SetWeapon(Weapon weapon);
 	void SetAbility(AbilityEnum ability);
 	void DisplayInfo();
 	void DisplayInfoWeapon();
 	int Roll(int minNumber, int maxNumber);
 	string AbilityEnumToString(AbilityEnum Ability);
 	string WeaponEnumToString(WeaponEnum Ability);
+	void TakeDamage(Character enemies);
+	void DoDamage(Character* enemy);
 };
 
