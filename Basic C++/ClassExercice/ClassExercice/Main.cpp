@@ -5,15 +5,15 @@
 
 int main() 
 {
-	/*Character boby("boby");
+	/*Character boby("boby",WeaponEnum::Spear);
 	boby.DisplayInfo();
 	boby.SetAbility(AbilityEnum::Intelligence);
 	boby.SetWeapon(WeaponEnum::MagicStaff);
 	boby.~Character();
 	boby.DisplayInfo();
 
-	cout << Character::currentlyLiving << endl;
-	*/
+	cout << Character::currentlyLiving << endl;*/
+	
 	//Start of the game
 
 	cout << "Hello Traveler ! What's your name ?" << endl;
@@ -30,19 +30,21 @@ int main()
 		new Item("Shield")
 	};
 
-	player.SetWeapon(spear);
+	//player.SetWeapon(spear);
 	cout << "Choose a weapon" << endl;
 	int weaponChoice;
-	//weaponChoice = utilities::choice("Sword", "Spear", "MagicStaff");
-	
-	//cout << utilities::roll(10, 20);
-	
-	//player.DisplayInfoWeapon();
 
-	//enemy.DisplayInfo();
-	//player.DoDamage(&enemy);
-	//enemy.DisplayInfo();
-	//player.DisplayInfo();
+	weaponChoice = utilities::choice("Sword", "Spear", "MagicStaff");
+	cout << weaponChoice << endl;
+
+	cout << "roll : " << utilities::roll(10, 20) << endl;
+	
+	player.DisplayInfoWeapon();
+
+	enemy.DisplayInfo();
+	player.DoDamage(&enemy);
+	enemy.DisplayInfo();
+	player.DisplayInfo();
 
 	Item* selectedItem = items[0]->ItemChoice(items);
 

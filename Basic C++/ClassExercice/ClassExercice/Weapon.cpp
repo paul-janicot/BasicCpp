@@ -18,8 +18,7 @@ Weapon::~Weapon()
 void Weapon::DisplayInfo()
 {
 	std::cout << "Name id : " << mName << std::endl;
-	std::cout << mId << std::endl;
-	std::cout << mDamage << std::endl;
+	std::cout << "Damage :"<< mDamage << std::endl;
 	
 	
 }

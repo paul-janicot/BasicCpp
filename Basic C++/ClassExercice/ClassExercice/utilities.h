@@ -13,8 +13,5 @@ namespace utilities {
 	int roll(int minNum, int maxNum);
 }
 
-class utilitie
-{
-};
 
 
