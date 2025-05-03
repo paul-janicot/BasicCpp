@@ -46,6 +46,6 @@ public:
 	string AbilityEnumToString(AbilityEnum Ability);
 	string WeaponEnumToString(WeaponEnum Ability);
 	void TakeDamage(Character enemies);
-	void DoDamage(Character* enemy);
+	void DoDamage(Character* enemy,int shield);
 };
 

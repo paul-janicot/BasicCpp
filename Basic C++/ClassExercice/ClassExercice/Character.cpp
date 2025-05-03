@@ -63,9 +63,9 @@ void Character::TakeDamage(Character enemies)
 	}
 }
 
-void Character::DoDamage(Character* enemy)
+void Character::DoDamage(Character* enemy,int shield)
 {
-	enemy->mHealth -= mWeapon.mDamage;
+	enemy->mHealth -= mWeapon.mDamage - shield;
 	if (enemy->mHealth <= 0) {
 		cout << "EnemyDead" << endl;
 	}

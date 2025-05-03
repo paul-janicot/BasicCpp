@@ -107,18 +107,44 @@ int main()
 
 	Character goblin("goblin", sword, 12);
 
-	
+	bool runAway = false;
 
-	while (goblin.GetHealth() > 0) {
+	while (goblin.GetHealth() > 0 && player.GetHealth() > 0 && runAway == false){
 		int goblinChoice = utilities::choice("Attack", "Defend", "Run Away");
 		switch (goblinChoice) {
 		case 1:
 			cout << "You attack the goblin." << endl;
-			player.DoDamage(&goblin);
+			player.DoDamage(&goblin,0);
 			cout << "He now has " << goblin.GetHealth() << " HP" << endl;
+			cout << "The goblin attacks !" << endl;
+			goblin.DoDamage(&player,0);
+			cout << "You now have " << player.GetHealth() << " HP" << endl;
 			break;
+		case 2:
+			if (shopItem == 2) 
+			{
+				cout << "You defend yourself with your shield ! It reduces the damage" << endl;
+				goblin.DoDamage(&player, 5);
+				cout << " You counter 5 HP. You now have " << player.GetHealth() << " HP" << endl;
+
+			}
+			else {
+				cout << "You defend yourself ! It reduces the damage" << endl;
+				goblin.DoDamage(&player, 2);
+				cout << " You counter 2 HP. You now have " << player.GetHealth() << " HP" << endl;
+
+			}
+			break;
+		case 3:
+			cout << "You run away..." << endl;
+			runAway = true;
+			break;
+
 		}
 	}
+
+	cout << "Congrats you gets rid of this goblin ! Go on a nice rest Traveler... you deserve it !" << endl;
+
 
 
 	/*std::vector<Item*> items = {
