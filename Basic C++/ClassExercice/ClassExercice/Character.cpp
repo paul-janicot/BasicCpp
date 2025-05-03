@@ -83,11 +83,12 @@ Character::Character() :
 {
 }
 
-Character::Character(string name, Weapon weapon) :
+Character::Character(string name, Weapon weapon, int health) :
 	Character()
 {
 	mName = name;
 	mWeapon = weapon;
+	mHealth = health;
 	totalEverCreated++;
 	currentlyLiving++;
 }
@@ -108,6 +109,16 @@ AbilityEnum Character::GetAbility()
 	return mAbility;
 }
 
+int Character::GetCoins()
+{
+	return mCoins;
+}
+
+int Character::GetHealth()
+{
+	return mHealth;
+}
+
 void Character::SetWeapon(Weapon weapon)
 {
 	mWeapon = weapon;
@@ -117,6 +128,11 @@ void Character::SetAbility(AbilityEnum ability)
 {
 	mAbility = ability;
 	cout << "your new abilities is " << AbilityEnumToString(mAbility) << endl;
+}
+
+void Character::AddCoins(int coinsToAdd)
+{
+	mCoins += coinsToAdd;
 }
 
 void Character::DisplayInfo()

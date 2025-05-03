@@ -31,12 +31,15 @@ public:
 	static int totalEverCreated;
 	static int currentlyLiving;
 	Character();
-	Character(string name, Weapon weapon);
+	Character(string name, Weapon weapon, int health);
 	~Character();
 	WeaponEnum GetWeapon();
 	AbilityEnum GetAbility();
+	int GetCoins();
+	int GetHealth();
 	void SetWeapon(Weapon weapon);
 	void SetAbility(AbilityEnum ability);
+	void AddCoins(int coinsToAdd);
 	void DisplayInfo();
 	void DisplayInfoWeapon();
 	int Roll(int minNumber, int maxNumber);
